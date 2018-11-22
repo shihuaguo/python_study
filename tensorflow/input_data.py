@@ -106,8 +106,8 @@ class DataSet(object):
             self.one_hot = one_hot
         else:
             assert images.shape[0] == labels.shape[0], (
-                'images.shape: %s labels.shape: %s' % (images.shape,
-                                                       labels.shape))
+                    'images.shape: %s labels.shape: %s' % (images.shape,
+                                                           labels.shape))
             self._num_examples = images.shape[0]
             # Convert shape from [num examples, rows, columns, depth]
             # to [num examples, rows*columns] (assuming depth == 1)
@@ -203,4 +203,4 @@ def read_data_sets(train_dir, fake_data=False, one_hot=False, dtype=tf.float32):
     data_sets.test = DataSet(test_images, test_labels, dtype=dtype)
     return data_sets
 
-#mnist = read_data_sets("MNIST_data/", one_hot=True)
+# mnist = read_data_sets("MNIST_data/", one_hot=True)
